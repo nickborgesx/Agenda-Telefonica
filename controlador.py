@@ -8,11 +8,16 @@ def adicionarContatos():
         telefone=str(input('Telefone: '))
         endereco=str(input('Endereco: '))
         email=str(input('Email: '))
+        for i, contato in enumerate(lstContatos):
+            if contato[4] == email:
+                print('Email já cadastrado')
+                return
         contato=[nome, sobrenome, telefone, endereco, email]
         lstContatos.append(contato)
         sair=int(input('Deseja fazer mais outro cadastro ?\n [1]-Sim / [2]-Não :  '))
         if sair==2:
             break
+        
     
 def listarContatos():
     print('--------------------------')
